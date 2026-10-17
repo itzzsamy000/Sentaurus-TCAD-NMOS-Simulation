@@ -1,0 +1,42 @@
+# Sentaurus TCAD - Git Ignore Rules
+# ====================================
+
+# ── Sentaurus flex-license / daemon logs ──────────────────────────────────────
+flex*.log
+
+# ── Sentaurus Visual crash reports ───────────────────────────────────────────
+sv_report_crash_*.log
+
+# ── Sentaurus Visual session logs ────────────────────────────────────────────
+SVisualTcl.log
+SVisualTcl.log.BAK
+
+# ── Sentaurus Workbench / tool temporary files ───────────────────────────────
+*.tmp
+*.bak
+*.swp
+*~
+
+# ── OS-generated files ───────────────────────────────────────────────────────
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ── Editor / IDE files ───────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ── Environment / secrets (never commit these) ───────────────────────────────
+.env
+.env.*
+*.key
+*.pem

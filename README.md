@@ -23,6 +23,10 @@ Use a licensed Synopsys Sentaurus TCAD installation with the tools needed to edi
 
 The repository includes generated mesh, curve, and result files, so existing results can be inspected without rerunning the simulations.
 
+## Screenshots
+
+Simulation result screenshots are stored in the [`screenshot/`](screenshot/) folder. They show key outputs from Sentaurus Visual, including the NMOS device structure, mesh, and Id-Vg transfer characteristics.
+
 ## Environment and licensing
 
 - Review Sentaurus project paths before running on another machine. For example, `nmos_msh.cmd` contains an output path under `/home/administrator/sateesh/` that may need to be changed.
