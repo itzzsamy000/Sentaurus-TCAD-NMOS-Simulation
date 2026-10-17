@@ -23,25 +23,101 @@ Use a licensed Synopsys Sentaurus TCAD installation with the tools needed to edi
 
 The repository includes generated mesh, curve, and result files, so existing results can be inspected without rerunning the simulations.
 
-## Screenshots
+## Simulation Workflow & Screenshots
 
-Simulation result screenshots from Sentaurus Visual — showing the NMOS device structure, mesh, doping profiles, and Id-Vg transfer characteristics.
+All results are visualized in **Sentaurus Visual**. The screenshots follow the 3-stage TCAD simulation pipeline below.
 
-![Screenshot 1](screenshot/Screenshot%202026-09-13%20125354.png)
+---
 
-![Screenshot 2](screenshot/Screenshot%202026-09-13%20142335.png)
+```
+┌─────────────────────────────────────────────────────────────┐
+│              NMOS TCAD SIMULATION FLOW                      │
+│                                                             │
+│  STAGE 1: Device Structure & Mesh Generation                │
+│  ├── Step 1 → NMOS Mesh + Doping Concentration             │
+│  └── Step 2 → Phosphorus Active Concentration Profile       │
+│                          │                                  │
+│                          ▼                                  │
+│  STAGE 2: Electrical Simulation (Sentaurus Device)          │
+│  ├── Step 3 → Reference Id-Vg (linear, Ioff analysis)      │
+│  ├── Step 4 → Reference Id-Vg (linear, IDsat analysis)     │
+│  └── Step 5 → Device Structure + Id-Vg + Band Diagram      │
+│                          │                                  │
+│                          ▼                                  │
+│  STAGE 3: Post-Processing & Comparative Analysis            │
+│  ├── Step 6 → Full Sentaurus Visual view (Id-Vg + Bands)   │
+│  ├── Step 7 → Id-Vg comparison: 3 simulation variants      │
+│  └── Step 8 → Id-Vg comparison: all 4 curves + REFERENCE  │
+└─────────────────────────────────────────────────────────────┘
+```
 
-![Screenshot 3](screenshot/Screenshot%202026-09-13%20142523.png)
+---
 
-![Screenshot 4](screenshot/Screenshot%202026-09-13%20145437.png)
+### 🔷 Stage 1 — Device Structure & Mesh Generation
 
-![Screenshot 5](screenshot/Screenshot%202026-09-13%20150042.png)
+> Geometry is built in Sentaurus Structure Editor and meshed using `nmos_msh.cmd`. Doping profiles are defined for source, drain, channel, and substrate.
 
-![Screenshot 6](screenshot/Screenshot%202026-09-13%20150154.png)
+**Step 1 — NMOS Mesh with Doping Concentration**
+Triangular mesh overlaid on the 2D NMOS cross-section, with colour-mapped doping concentration (`cm⁻³`). Source and drain n+ regions are visible in red.
 
-![Screenshot 7](screenshot/Screenshot%202026-09-14%20140110.png)
+![Step 1 – NMOS Mesh + Doping](screenshot/Screenshot%202026-09-13%20150042.png)
 
-![Screenshot 8](screenshot/Screenshot%202026-09-15%20121521.png)
+---
+
+**Step 2 — Phosphorus Active Concentration Profile**
+Smooth doping contour map showing Phosphorus active concentration across the device. Highlights the n+ source/drain implants and the lightly-doped p-substrate.
+
+![Step 2 – Phosphorus Active Concentration](screenshot/Screenshot%202026-09-13%20150154.png)
+
+---
+
+### 🔷 Stage 2 — Electrical Simulation (Sentaurus Device)
+
+> Device decks (`Satish01_des.cmd`, `Satish02_des.cmd`, `Satish03_des.cmd`) sweep the gate voltage to generate Id-Vg transfer characteristics and extract key parameters.
+
+**Step 3 — Reference Id-Vg (Ioff extraction)**
+Linear-scale Id-Vg for `REFERENCE_des`. The curve properties panel shows `Ioff = 1.58096e-18 A`, confirming excellent subthreshold leakage.
+
+![Step 3 – Reference Id-Vg (Ioff)](screenshot/Screenshot%202026-09-15%20121521.png)
+
+---
+
+**Step 4 — Reference Id-Vg (IDsat extraction)**
+Same reference simulation with `IDsat = 1.64026e-05 A` extracted. The curve rises sharply above threshold, indicating strong inversion.
+
+![Step 4 – Reference Id-Vg (IDsat)](screenshot/Screenshot%202026-09-14%20140110.png)
+
+---
+
+**Step 5 — Device Cross-Section + Id-Vg + Band Diagram**
+Multi-panel view: Id-Vg transfer curve (top-left), 2D NMOS device cross-section with BandGap colour map (top-right), and energy band diagrams Ec, Ev, Efn, Efp through the channel (bottom panels).
+
+![Step 5 – Device + Id-Vg + Band Diagram](screenshot/Screenshot%202026-09-13%20145437.png)
+
+---
+
+### 🔷 Stage 3 — Post-Processing & Comparative Analysis
+
+> Results from multiple simulation variants are overlaid in Sentaurus Visual to compare threshold voltage, drive current, and subthreshold slope.
+
+**Step 6 — Full Sentaurus Visual Overview**
+Complete Sentaurus Visual workspace: Id-Vg plot (top-left), NMOS cross-section BandGap map (top-right), and dual band diagrams (bottom). Confirms all data loaded correctly.
+
+![Step 6 – Full Sentaurus Visual Overview](screenshot/Screenshot%202026-09-13%20125354.png)
+
+---
+
+**Step 7 — Id-Vg Comparison: 3 Simulation Variants (log scale)**
+Overlay of three Id-Vg curves — `satish_des` (red), `satish01_des` (green), `satish02_des` (blue) — on a log-scale Y-axis. Shows threshold voltage shift and subthreshold slope variation across device variants.
+
+![Step 7 – Id-Vg 3-Curve Comparison](screenshot/Screenshot%202026-09-13%20142335.png)
+
+---
+
+**Step 8 — Id-Vg Comparison: All 4 Curves Including REFERENCE (log scale)**
+Final comparative plot adding `REFERENCE_des` (cyan) to the three-variant overlay. Used to validate simulation accuracy against the reference device and benchmark performance.
+
+![Step 8 – Id-Vg Full Comparison with Reference](screenshot/Screenshot%202026-09-13%20142523.png)
 
 ## Environment and licensing
 
