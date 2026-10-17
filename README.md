@@ -25,7 +25,23 @@ The repository includes generated mesh, curve, and result files, so existing res
 
 ## Screenshots
 
-Simulation result screenshots are stored in the [`screenshot/`](screenshot/) folder. They show key outputs from Sentaurus Visual, including the NMOS device structure, mesh, and Id-Vg transfer characteristics.
+Simulation result screenshots from Sentaurus Visual — showing the NMOS device structure, mesh, doping profiles, and Id-Vg transfer characteristics.
+
+![Screenshot 1](screenshot/Screenshot%202026-09-13%20125354.png)
+
+![Screenshot 2](screenshot/Screenshot%202026-09-13%20142335.png)
+
+![Screenshot 3](screenshot/Screenshot%202026-09-13%20142523.png)
+
+![Screenshot 4](screenshot/Screenshot%202026-09-13%20145437.png)
+
+![Screenshot 5](screenshot/Screenshot%202026-09-13%20150042.png)
+
+![Screenshot 6](screenshot/Screenshot%202026-09-13%20150154.png)
+
+![Screenshot 7](screenshot/Screenshot%202026-09-14%20140110.png)
+
+![Screenshot 8](screenshot/Screenshot%202026-09-15%20121521.png)
 
 ## Environment and licensing
 
