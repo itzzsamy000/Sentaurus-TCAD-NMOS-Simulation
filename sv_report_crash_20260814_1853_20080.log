@@ -1,0 +1,84 @@
+###########################################
+# Sentaurus Visual T-2022.03-SP2.
+# Tcl log file.
+#------------------------------------------
+# Date: Aug 14, 2026. 18:48:33.
+# Version: 33.0.7745337 (0.7745337)
+# Mode: Interactive (GUI).
+# Mesa: enabled.
+# Hostname: vlsi.iiitbh.ac.in.
+# Machine: Linux, x86_64, x86_64.
+# Kernel: 3.10.0-1160.119.1.el7.x86_64.
+###########################################
+
+load_file /home/administrator/sateesh/Id_Vg_REFERENCE_des.plt
+create_plot -1d
+select_plots {Plot_1}
+#-> Plot_1
+#-> Plot_1
+#-> Id_Vg_REFERENCE_des
+create_curve -axisX {DRAIN InnerVoltage} -axisY {DRAIN TotalCurrent} -dataset {Id_Vg_REFERENCE_des} -plot Plot_1
+#-> Curve_1
+create_curve -axisX {GATE OuterVoltage} -axisY {DRAIN TotalCurrent} -dataset {Id_Vg_REFERENCE_des} -plot Plot_1
+#-> Curve_2
+remove_curves -plot Plot_1 {Curve_1}
+#-> Curve_1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+set_axis_prop -plot Plot_1 -axis y -type log
+#-> 0
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 1.1
+calculate -plot Plot_1 Curve_2 -op idsat
+# idsat: 0.000293596104268
+#-> 0.000293596104268
+calculate -plot Plot_1 Curve_2 -op ioff
+#!-> Error: Couldn't calculate data from curve 'Curve_2'. Check arguments.
+
+The program was unexpectedly terminated.
+Signal SIGSEGV caught: Invalid memory reference.
+
+Stack Dump:
+#2 0x000x2b8c2ea28664 in /lib64/libpthread.so.0(0x2b8c2ea28630 + 0x34)
+#3 0x00000000x12aceca in /home/administrator/vlsi/synopsys/tcad/sentaurus/T-2022.03-SP2/bin/../tcad/current/linux64/bin/svisual_bin/svisual_exec(QList<QString>::append(QString const&) + 0x2d)
+#4 0x00000000x18941b4 in /home/administrator/vlsi/synopsys/tcad/sentaurus/T-2022.03-SP2/bin/../tcad/current/linux64/bin/svisual_bin/svisual_exec(MakoPlotInteractor::curveDeleted(daal::Curve*) + 0xb2)
+#5 0x000x2b8c2f014d58 in /home/administrator/vlsi/synopsys/tcad/sentaurus/T-2022.03-SP2/bin/../tcad/current/linux64/lib/libQt5Widgets.so.5(QWidget::event(QEvent*) + 0xb14)
+#6 0x000x2b8c2efd3bce in /home/administrator/vlsi/synopsys/tcad/sentaurus/T-2022.03-SP2/bin/../tcad/current/linux64/lib/libQt5Widgets.so.5(QApplicationPrivate::notify_helper(QObject*, QEvent*) + 0x7f)
+#7 0x000x2b8c2efdd3a8 in /home/administrator/vlsi/synopsys/tcad/sentaurus/T-2022.03-SP2/bin/../tcad/current/linux64/lib/libQt5Widgets.so.5(QApplication::notify(QObject*, QEvent*) + 0x91c)
+#8 0x00000000x12e5f44 in /home/administrator/vlsi/synopsys/tcad/sentaurus/T-2022.03-SP2/bin/../tcad/current/linux64/bin/svisual_bin/svisual_exec(MakoGUIApplication::notify(QObject*, QEvent*) + 0x42)
+#9 0x000x2b8c2f829bd4 in /home/administrator/vlsi/synopsys/tcad/sentaurus/T-2022.03-SP2/bin/../tcad/current/linux64/lib/libQt5Core.so.5(QCoreApplication::notifyInternal2(QObject*, QEvent*) + 0x11a)
+#a 0x000x2b8c2f036bcc in /home/administrator/vlsi/synopsys/tcad/sentaurus/T-2022.03-SP2/bin/../tcad/current/linux64/lib/libQt5Widgets.so.5(QDesktopWidget::qt_metacall(QMetaObject::Call, int, void**) + 0x6006)
+#b 0x000x2b8c2efd3bce in /home/administrator/vlsi/synopsys/tcad/sentaurus/T-2022.03-SP2/bin/../tcad/current/linux64/lib/libQt5Widgets.so.5(QApplicationPrivate::notify_helper(QObject*, QEvent*) + 0x7f)
+#c 0x000x2b8c2efdc480 in /home/administrator/vlsi/synopsys/tcad/sentaurus/T-2022.03-SP2/bin/../tcad/current/linux64/lib/libQt5Widgets.so.5(QApplication::notify(QObject*, QEvent*) + 0x188)
+#d 0x00000000x12e5f44 in /home/administrator/vlsi/synopsys/tcad/sentaurus/T-2022.03-SP2/bin/../tcad/current/linux64/bin/svisual_bin/svisual_exec(MakoGUIApplication::notify(QObject*, QEvent*) + 0x42)
+#e 0x000x2b8c2f829bd4 in /home/administrator/vlsi/synopsys/tcad/sentaurus/T-2022.03-SP2/bin/../tcad/current/linux64/lib/libQt5Core.so.5(QCoreApplication::notifyInternal2(QObject*, QEvent*) + 0x11a)
+#f 0x000x2b8c3078f976 in /home/administrator/vlsi/synopsys/tcad/sentaurus/T-2022.03-SP2/bin/../tcad/current/linux64/lib/libQt5Gui.so.5(QGuiApplicationPrivate::processKeyEvent(QWindowSystemInterfacePrivate::KeyEvent*) + 0x143)
+#10 0x000x2b8c3079495e in /home/administrator/vlsi/synopsys/tcad/sentaurus/T-2022.03-SP2/bin/../tcad/current/linux64/lib/libQt5Gui.so.5(QGuiApplicationPrivate::processWindowSystemEvent(QWindowSystemInterfacePrivate::WindowSystemEvent*) + 0x20f)
+#11 0x000x2b8c3076e388 in /home/administrator/vlsi/synopsys/tcad/sentaurus/T-2022.03-SP2/bin/../tcad/current/linux64/lib/libQt5Gui.so.5(QWindowSystemInterface::sendWindowSystemEvents(QFlags<QEventLoop::ProcessEventsFlag>) + 0xac)
+#12 0x000x2b8c3da2b024 in /home/administrator/vlsi/synopsys/tcad/sentaurus/T-2022.03-SP2/bin/../tcad/current/linux64/lib/libQt5XcbQpa.so.5(QXcbNativeInterface::dumpNativeWindows(unsigned long long) const + 0x9eba)
+#13 0x000x2b8c32727272 in /lib64/libglib-2.0.so.0(g_main_context_dispatch + 0x159)
+#14 0x000x2b8c32727670 in /lib64/libglib-2.0.so.0(0x2b8c32727478 + 0x1f8)
+#15 0x000x2b8c32727558 in /lib64/libglib-2.0.so.0(g_main_context_iteration + 0x2c)
+#16 0x000x2b8c2f87f86c in /home/administrator/vlsi/synopsys/tcad/sentaurus/T-2022.03-SP2/bin/../tcad/current/linux64/lib/libQt5Core.so.5(QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) + 0x5e)
+#17 0x000x2b8c2f828936 in /home/administrator/vlsi/synopsys/tcad/sentaurus/T-2022.03-SP2/bin/../tcad/current/linux64/lib/libQt5Core.so.5(QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) + 0x11b)
+#18 0x000x2b8c2f8302b8 in /home/administrator/vlsi/synopsys/tcad/sentaurus/T-2022.03-SP2/bin/../tcad/current/linux64/lib/libQt5Core.so.5(QCoreApplication::exec() + 0x7c)
+#19 0x00000000x12b98a6 in /home/administrator/vlsi/synopsys/tcad/sentaurus/T-2022.03-SP2/bin/../tcad/current/linux64/bin/svisual_bin/svisual_exec(RunMako(int, char**) + 0x1e6b)
+#1a 0x00000000x1265d8c in /home/administrator/vlsi/synopsys/tcad/sentaurus/T-2022.03-SP2/bin/../tcad/current/linux64/bin/svisual_bin/svisual_exec(main + 0x1b6)
+#1b 0x000x2b8c3148564a in /lib64/libc.so.6(__libc_start_main + 0xf5)
+#1c 0x00000000x12a56ad in /home/administrator/vlsi/synopsys/tcad/sentaurus/T-2022.03-SP2/bin/../tcad/current/linux64/bin/svisual_bin/svisual_exec(0x12a5684 + 0x29)

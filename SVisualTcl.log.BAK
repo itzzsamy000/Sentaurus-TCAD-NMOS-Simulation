@@ -1,0 +1,150 @@
+###########################################
+# Sentaurus Visual T-2022.03-SP2.
+# Tcl log file.
+#------------------------------------------
+# Date: Sep 20, 2026. 17:01:05.
+# Version: 33.0.7745337 (0.7745337)
+# Mode: Interactive (GUI).
+# Mesa: enabled.
+# Hostname: vlsi.iiitbh.ac.in.
+# Machine: Linux, x86_64, x86_64.
+# Kernel: 3.10.0-1160.119.1.el7.x86_64.
+###########################################
+
+load_file /home/administrator/sateesh/Id_Vg_CURVEsatish_des.plt
+create_plot -1d
+select_plots {Plot_1}
+#-> Plot_1
+#-> Plot_1
+#-> Id_Vg_CURVEsatish_des
+create_curve -axisX {GATE OuterVoltage} -axisY {DRAIN TotalCurrent} -dataset {Id_Vg_CURVEsatish_des} -plot Plot_1
+#-> Curve_1
+load_file /home/administrator/sateesh/Id_Vg_CURVEsatish01_des.plt
+#-> Id_Vg_CURVEsatish01_des
+set_axis_prop -plot Plot_1 -axis y -type log
+#-> 0
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 1.1
+create_curve -axisX {GATE OuterVoltage} -axisY {DRAIN TotalCurrent} -dataset {Id_Vg_CURVEsatish01_des} -plot Plot_1
+#-> Curve_2
+load_file /home/administrator/sateesh/Id_Vg_CURVEsatish02_des.plt
+#-> Id_Vg_CURVEsatish02_des
+create_curve -axisX {GATE OuterVoltage} -axisY {DRAIN TotalCurrent} -dataset {Id_Vg_CURVEsatish02_des} -plot Plot_1
+#-> Curve_3
+set_axis_prop -plot Plot_1 -axis y -type linear
+#-> 0
+zoom_plot -plot Plot_1 -reset
+set_axis_prop -plot Plot_1 -axis y -type log
+#-> 0
+calculate -plot Plot_1 Curve_1 -op idsat
+# idsat: 0.000135778223145
+#-> 0.000135778223145
+calculate -plot Plot_1 Curve_1 -op ioff
+#!-> Error: Couldn't calculate data from curve 'Curve_1'. Check arguments.
+calculate -plot Plot_1 Curve_3 -op idsat
+# idsat: 4.25895955153e-05
+#-> 4.25895955153e-05
+calculate -plot Plot_1 Curve_3 -op ioff
+#!-> Error: Couldn't calculate data from curve 'Curve_3'. Check arguments.
+calculate -plot Plot_1 Curve_3 -op idsat
+# idsat: 4.25895955153e-05
+#-> 4.25895955153e-05
+remove_curves -plot Plot_1 {Curve_1}
+#-> Curve_1
+set_axis_prop -plot Plot_1 -axis y2 -type log
+#-> 0
+set_axis_prop -plot Plot_1 -axis y -type linear
+#-> 0
+set_axis_prop -plot Plot_1 -axis y -type log
+#-> 0
+set_axis_prop -plot Plot_1 -axis y -type linear
+#-> 0
+zoom_plot -plot Plot_1 -reset
+calculate -plot Plot_1 Curve_2 -op idsat
+# idsat: 2.24703935879e-05
+#-> 2.24703935879e-05
+calculate -plot Plot_1 Curve_2 -op ioff
+#!-> Error: Couldn't calculate data from curve 'Curve_2'. Check arguments.
+set_axis_prop -plot Plot_1 -axis y -type log
+#-> 0
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -reset
+set_axis_prop -plot Plot_1 -axis y2 -type linear
+#-> 0
+set_axis_prop -plot Plot_1 -axis y -type linear
+#-> 0
+set_axis_prop -plot Plot_1 -axis y -type log
+#-> 0
+load_file /home/administrator/sateesh/satish01_des.plt
+#-> satish01_des
+create_curve -axisX {GATE OuterVoltage} -axisY {DRAIN TotalCurrent} -dataset {satish01_des} -plot Plot_1
+#-> Curve_4
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+zoom_plot -plot Plot_1 -factor 1.1
+set_axis_prop -plot Plot_1 -axis y -type linear
+#-> 0
+zoom_plot -plot Plot_1 -reset
+set_axis_prop -plot Plot_1 -axis y -type log
+#-> 0
+set_axis_prop -plot Plot_1 -axis y -type linear
+#-> 0
+load_file /home/administrator/sateesh/satish_des_s.plt
+#-> satish_des_s
+create_curve -axisX {GATE OuterVoltage} -axisY {DRAIN TotalCurrent} -dataset {satish_des_s} -plot Plot_1
+#-> Curve_5
+zoom_plot -plot Plot_1 -factor 1.1
+set_axis_prop -plot Plot_1 -axis y -type log
+#-> 0
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+zoom_plot -plot Plot_1 -factor 0.9
+set_axis_prop -plot Plot_1 -axis y -type linear
+#-> 0
+zoom_plot -plot Plot_1 -reset
+exit 0
+ 
